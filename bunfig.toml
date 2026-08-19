@@ -1,0 +1,6 @@
+# Bun configuration
+# https://bun.sh/docs/runtime/bunfig
+
+[test]
+# Test files live under tests/ and use the built-in `bun test` runner.
+root = "."

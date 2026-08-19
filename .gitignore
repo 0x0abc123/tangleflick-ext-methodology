@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Bun
+bun.lockb
+
+# User's real config (copy config.example.json → config.json)
+config/config.json
+
+# Embedded SQLite data
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# Env & logs
+.env
+.env.*
+*.log
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
