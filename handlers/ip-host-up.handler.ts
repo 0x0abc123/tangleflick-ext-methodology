@@ -55,7 +55,15 @@ export default defineHandler<IpAddrPayload>({
     );
     if (!!records && records.length > 0) {
         const firstRecord = records[0];
-        if (firstRecord?.ip.address == ipData.ip.address) {
+        if (ipData.ip.cidr) {
+          for (const rec of records) {
+            await ctx.publish(HostUpEvent.type, {
+                ip: rec.ip,
+                force: ipData.force,
+            });
+            ctx.logger.debug("ip-addr is up (CIDR scan) ", { data: rec.ip });
+          }
+        } else if (firstRecord?.ip.address == ipData.ip.address) {
             await ctx.publish(HostUpEvent.type, {
                 ip: ipData.ip,
                 force: ipData.force,
