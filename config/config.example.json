@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "tangleflick",
-    "logLevel": "info"
+    "logLevel": "debug"
   },
   "bus": {
     "type": "emitter"
@@ -11,11 +11,11 @@
     "path": "./data/tangleflick.db"
   },
   "http": {
-    "enabled": false,
-    "host": "0.0.0.0",
+    "enabled": true,
+    "host": "127.0.0.1",
     "port": 3000,
     "path": "/webhook",
-    "allowedEvents": ["example.created"],
+    "allowedEvents": ["dns.name","ip.addr","host.up"],
     "auth": {
       "type": "apiKey",
       "header": "authorization",

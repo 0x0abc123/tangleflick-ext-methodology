@@ -68,10 +68,10 @@ export default defineHandler<IpAddrPayload>({
                 ip: ipData.ip,
                 force: ipData.force,
             });
-            ctx.logger.debug("ip-addr is up ", { data: firstRecord });
+            ctx.logger.info("ip-addr is up ", { data: firstRecord });
         } 
     } else {
-        ctx.logger.info("ip-addr", {name: ipAddr, message: `Host not found or not up - ${ipAddr}`});
+        ctx.logger.debug("ip-addr", {name: ipAddr, message: `Host not found or not up - ${ipAddr}`});
     }
 
     await history.put(ipAddr, {seen: true});

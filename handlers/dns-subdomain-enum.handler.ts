@@ -7,8 +7,8 @@ import {
 import { handleExcluded } from "./dns.common.ts";
 import { runCommand } from "./common.ts";
 
-const SUBFINDER_BIN_PATH = "/opt/subfinder/subfinder";
-const SUBFINDER_PROVIDER_CONF_PATH = "/opt/subfinder/config.yml";
+const SUBFINDER_BIN_PATH = "/usr/local/bin/subfinder";
+const SUBFINDER_PROVIDER_CONF_PATH = "/etc/subfinder/config.yml";
 
 interface SubfinderJsonResult {
   host: string,

@@ -54,7 +54,7 @@ const commandThrottleGroups: Record<string, CommandGroup> = {
         timeout: 1800*1000 // 30 mins
     },
     portscan: { 
-        throttler: new Semaphore(Number(2)), 
+        throttler: new Semaphore(Number(1)), 
         timeout: 3600*1000 // 60 mins
     },
     httpscan: { 

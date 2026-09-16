@@ -68,8 +68,8 @@ export default defineHandler<HostUpPayload>({
                 const payload = {
                     ip: record.ip,
                     port: record.port,
-                    svcType: record.serviceType || "",
-                    svcVersion: record.serviceVersion || "",
+                    svcType: record.serviceType || "unknown",
+                    svcVersion: record.serviceVersion || "unknown",
                 }
                 let payloadHttpSvc: ServiceHttpPayload | null = null;
 
@@ -82,7 +82,7 @@ export default defineHandler<HostUpPayload>({
                   ctx.logger.debug("host-port-scan http.svc", {data: hostNames});
                 }
                 await ctx.publish(eventType, payloadHttpSvc || payload);
-                ctx.logger.info("host-port-scan found service ", { data: record });
+                ctx.logger.info("host-port-scan found service", { data: record });
             } 
         }
     }

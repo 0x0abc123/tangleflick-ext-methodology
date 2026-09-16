@@ -103,6 +103,7 @@ const HttpSchema = z.object({
   auth: HttpAuthSchema,
 });
 
+
 /* --------------------------------- Root ----------------------------------- */
 
 export const ConfigSchema = z.object({
@@ -118,3 +119,4 @@ export type StoreConfig = z.infer<typeof StoreSchema>;
 export type AppConfig = z.infer<typeof AppSchema>;
 export type HttpConfig = z.infer<typeof HttpSchema>;
 export type HttpAuthConfig = z.infer<typeof HttpAuthSchema>;
+
